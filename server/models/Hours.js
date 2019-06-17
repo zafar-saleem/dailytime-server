@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const HoursSchema = new mongoose.Schema({
+  userid: {
+    type: String,
+    required: true
+  },
   date: {
     type: String,
     required: true
@@ -18,6 +22,6 @@ const HoursSchema = new mongoose.Schema({
     type: String,
     lowercase: true
   }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Hours', HoursSchema);

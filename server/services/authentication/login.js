@@ -34,7 +34,8 @@ function loginUser(request, response) {
           success: true,
           token: 'JWT ' + token,
           role: user.role,
-          name: user.name
+          name: user.name,
+          id: user._id
         });
       }
 

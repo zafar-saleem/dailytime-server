@@ -13,5 +13,6 @@ router.post('/new', passport.authenticate('jwt', { session: false }), newService
 router.get('/list', passport.authenticate('jwt', { session: false }), listService.fetch);
 router.get('/profile', passport.authenticate('jwt', { session: false }), profileService.fetch);
 router.get('/employee/details', passport.authenticate('jwt', { session: false }), detailService.fetch);
+router.put('/employee/update', passport.authenticate('jwt', { session: false }), detailService.updateEmployee);
 
 module.exports = router;

@@ -14,5 +14,6 @@ router.get('/list', passport.authenticate('jwt', { session: false }), listServic
 router.get('/profile', passport.authenticate('jwt', { session: false }), profileService.fetch);
 router.get('/employee/details', passport.authenticate('jwt', { session: false }), detailService.fetch);
 router.put('/employee/update', passport.authenticate('jwt', { session: false }), detailService.updateEmployee);
+router.delete('/employee/delete', passport.authenticate('jwt', { session: false }), detailService.deleteEmployee);
 
 module.exports = router;

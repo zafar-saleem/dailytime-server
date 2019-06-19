@@ -42,7 +42,15 @@ function updateEmployee(request, response) {
   })
 }
 
+function deleteEmployee(request, response) {
+  User.findOneAndDelete({ _id: request.body.id }, (error, docs) => {
+    if (error) return response.json(error);
+    return response.json(docs);
+  })
+}
+
 module.exports = {
   fetch: fetch,
-  updateEmployee: updateEmployee
+  updateEmployee: updateEmployee,
+  deleteEmployee: deleteEmployee
 }
